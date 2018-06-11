@@ -9,7 +9,7 @@
   </select>
   <label for="">Manufacturer:</label>
   <select class="stock" title="stock_id" name="manufacturers_id">
-    <% for item in @stock %>
+    <% for item in @manufacturers %>
     <option value ="<%= item.id %>"<%='selected' if @entry.manufacturers_id == item.id %>><%=item.name%></option>
     <% end %>
   </select>
