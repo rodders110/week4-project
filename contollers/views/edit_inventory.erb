@@ -1,0 +1,19 @@
+<h2>Edit Inventory Screen</h2>
+
+<form  title="Inventory Item"action="/<%=@entry.id%>/update" method="post">
+  <label for="">Sweet:</label>
+  <select class="stock" title="stock_id" name="stock_id">
+    <% for item in @stock %>
+    <option value ="<%= item.id %>"<%='selected' if @entry.stock_id == item.id %>><%=item.name%></option>
+    <% end %>
+  </select>
+  <label for="">Manufacturer:</label>
+  <select class="stock" title="stock_id" name="manufacturers_id">
+    <% for item in @stock %>
+    <option value ="<%= item.id %>"<%='selected' if @entry.manufacturers_id == item.id %>><%=item.name%></option>
+    <% end %>
+  </select>
+  <label for="number">Volume:</label>
+  <input type="number" name="volume" value= '<%= @entry.volume %>' />
+  <input type="submit" value="Edit">
+</form>

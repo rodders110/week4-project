@@ -1,0 +1,19 @@
+<h2>Add to Inventory</h2>
+
+<form  title="Inventory Item"action="/save-to-inventory" method="post">
+  <label for="">Sweet:</label>
+  <select class="stock" title="stock_id" name="stock_id">
+    <% for item in @stock %>
+    <option value ="<%= item.id %>" ><%=item.name%></option>
+    <% end %>
+  </select>
+  <label for="">Manufacturer:</label>
+  <select class="manufacturer" title="manufacturer_id" name="manufacturers_id">
+    <% for item in @manufacturers %>
+    <option value ="<%= item.id %>" ><%=item.name%></option>
+    <% end %>
+  </select>
+  <label for="number">Volume:</label>
+  <input type="number" name="volume" />
+  <input type="submit" value="Edit">
+</form>

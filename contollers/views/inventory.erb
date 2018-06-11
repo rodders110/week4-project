@@ -1,0 +1,28 @@
+<h1>Inventory</h1>
+
+<table class = 'inventory'>
+  <tr>
+    <th>Item</th>
+    <th>Manufacturer</th>
+    <th>volume</th>
+  </tr>
+  <% for item in @stock %>
+    <tr>
+      <td><%=item.find_stock().name%></td>
+      <td><%=item.find_manufacturer().name%></td>
+      <td><%=item.volume%></td>
+      <td>
+      <form action="/<%=item.id%>/edit" method="get">
+        <input type="submit" name="" value="Edit">
+      </form>
+      </td>
+      <td>
+        <form action="/<%=item.id%>/delete" method="post">
+          <input type="submit" name="" value="Delete">
+      </form>
+
+      </td>
+    </tr>
+  <%end%>
+
+</table>
