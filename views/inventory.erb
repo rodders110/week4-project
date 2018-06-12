@@ -11,7 +11,12 @@
     <tr>
       <td><%=item.find_stock().name%></td>
       <td><%=item.find_manufacturer().name%></td>
-      <td class="volume"><%=item.volume%></td>
+      <td <% if item.volume <= 10 %>
+        p style = "background-color: red"
+        <% elsif item.volume > 10 && item.volume < 90 %>
+        p style = "background-color: orange"
+        <% end %>
+      ><%=item.volume%></td>
       <td>
       <form action="/<%=item.id%>/edit" method="get">
         <input type="submit" name="" value="Edit">

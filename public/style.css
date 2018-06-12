@@ -47,7 +47,7 @@ body{
  .navigation nav input[type=submit]{
   border-radius: 20px;
   width: 100%;
-  font-size: 15px;
+  font-size: 20px;
   margin-top: 15%;
   margin-bottom: 15%;
   padding: 14px 40px;
@@ -70,8 +70,12 @@ input[type=submit]:hover{
   align-self: stretch;
   display: flex;
   flex-direction: column;
+}
 
-
+.views{
+  font-size: 20px;
+  display: flex;
+  flex-grow: 1;
 }
 
 .main .views{
@@ -90,9 +94,6 @@ input[type=submit]:hover{
 
 }
 
-.main .views input[type=number]{
-
-}
 
 .main .views table{
   padding-top: 15%;
@@ -111,6 +112,7 @@ input[type=submit]:hover{
   margin: 1%;
   padding: 10px;
   background-image:url(sweets.jpg);
+  background-size: cover;
 
 }
 
