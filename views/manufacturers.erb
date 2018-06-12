@@ -1,0 +1,23 @@
+<div class="views">
+<h1>Manufacturers</h1>
+
+<table class = 'manufacturer'>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+  </tr>
+  <% for item in @manufacturers %>
+  <tr>
+    <td><%=item.name%></td>
+    <td><%=item.address%></td>
+    <td>
+      <form action="/<%=item.id%>/manufacturer-delete" method="post">
+        <input type="submit" name="" value="Delete">
+      </form>
+    </td>
+  </tr>
+  <%end%>
+
+</table>
+
+</div>

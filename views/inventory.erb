@@ -1,3 +1,4 @@
+<div class="views">
 <h1>Inventory</h1>
 
 <table class = 'inventory'>
@@ -10,7 +11,7 @@
     <tr>
       <td><%=item.find_stock().name%></td>
       <td><%=item.find_manufacturer().name%></td>
-      <td><%=item.volume%></td>
+      <td class="volume"><%=item.volume%></td>
       <td>
       <form action="/<%=item.id%>/edit" method="get">
         <input type="submit" name="" value="Edit">
@@ -26,3 +27,4 @@
   <%end%>
 
 </table>
+</div>

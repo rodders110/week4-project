@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Ye Olde Sweet Shoppe</title>
+</head>
+<body>
+
+  <div class="title">
+    <p>Ye Olde Sweet Shoppe</p>
+  </div>
+  <div class = "page">
+    <div class="navigation">
+      <nav>
+        <form action="/" method="get">
+          <input type="submit" value="Home">
+        </form>
+        <form action="/inventory" method="get">
+          <input type="submit" value="Inventory">
+        </form>
+        <form action="/new-stock" method="get">
+          <input type="submit" value="New Stock">
+        </form>
+        <form action="/new-manufacturer" method="get">
+          <input type="submit" value="New Manufacturer">
+        </form>
+        <form action="/new-to-inventory" method="get">
+          <input type="submit" value="New Inventory">
+        </form>
+        <form action="/list-stock" method="get">
+          <input type="submit" value="List Stock">
+        </form>
+        <form action="/list-manufacturers" method="get">
+          <input type="submit" value="List Manufacturers">
+        </form>
+
+      </nav>
+    </div>
+    <div class="main">
+      <%=yield%>
+    </div>
+
+    <div class="left_bar">
+
+    </div>
+  </div>
+
+</body>
+</html>

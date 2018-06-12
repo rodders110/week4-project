@@ -1,8 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('../models/inventory')
-require_relative('../models/stock')
-also_reload('../models/*')
+require_relative('models/inventory')
+require_relative('models/stock')
+also_reload('models/*')
 
 get '/' do
   erb(:index)
@@ -16,6 +16,11 @@ end
 get '/list-stock' do
   @stock = Stock.find_all()
   erb(:stock)
+end
+
+get '/list-manufacturers' do
+  @manufacturers = Manufacturer.find_all()
+  erb(:manufacturers)
 end
 
 get '/:id/edit'do
@@ -32,6 +37,7 @@ end
 
 get '/new-manufacturer' do
   erb(:new_manufacturer)
+  
 end
 
 get '/new-to-inventory' do
@@ -54,22 +60,30 @@ post '/:id/stock-delete' do
   redirect to '/stock'
 end
 
+post '/:id/manufacturer-delete' do
+  item = Manufacturer.find(params[:id])
+  entry = Manufacturer.new(item)
+  entry.delete()
+  redirect to '/list-manufacturers'
+end
+
 post '/:id/update' do
   @entry = Inventory.new(params).update
   redirect to '/inventory'
 
 end
 
+
 post '/stock-edit' do
   @stock = Stock.new(params)
   @stock.save()
-  redirect to '/inventory'
+  redirect to '/list-stock'
 end
 
 post '/manufacturer-edit' do
   @manufacturer = Manufacturer.new(params)
   @manufacturer.save()
-  redirect to '/inventory'
+  redirect to '/list-manufacturers'
 end
 
 post '/save-to-inventory' do

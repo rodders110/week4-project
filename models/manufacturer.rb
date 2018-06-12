@@ -37,9 +37,16 @@ class Manufacturer
     return answer
   end
 
-  def delete(id)
-    sql = "DELETE FROM manufacturers WHERE id = $1"
+  def self.find(id)
+    sql = "SELECT * FROM manufacturers WHERE id = $1"
     values = [id]
+    results = SqlRunner.run(sql, values)
+    return results[0]
+  end
+
+  def delete()
+    sql = "DELETE FROM manufacturers WHERE id = $1"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 
