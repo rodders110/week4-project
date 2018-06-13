@@ -37,7 +37,7 @@ end
 
 get '/new-manufacturer' do
   erb(:new_manufacturer)
-  
+
 end
 
 get '/new-to-inventory' do
@@ -57,7 +57,7 @@ post '/:id/stock-delete' do
   item = Stock.find(params[:id])
   entry = Stock.new(item)
   entry.delete()
-  redirect to '/stock'
+  redirect to '/list-stock'
 end
 
 post '/:id/manufacturer-delete' do
