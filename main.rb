@@ -1,5 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all')if development?
 require_relative('models/inventory')
 require_relative('models/stock')
 also_reload('models/*')
